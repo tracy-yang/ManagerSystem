@@ -34,7 +34,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" >
+$primaryColor:rgb(43,195,172) rgb(2, 178, 181);
+
 *{
 	padding: 0;
 	margin: 0;
@@ -42,8 +44,9 @@ export default {
 .nav-bar{
 	width: 100%;
 	height: 48px;
-	background:#2C3E50;
+	background:#2CC5AE;
 	color:#fff;
+	box-shadow:0px 1px 2px #999;
 }
 .side-bar{
 	width: 200px;
@@ -52,7 +55,7 @@ export default {
 	top: 48px;
 	left: 0;
 	bottom: 0;
-	background:#ccc;
+	background:#fff;
 	color:#3C3E50;
 }
 .view{
@@ -61,7 +64,7 @@ export default {
 	left: 200px;
 	right: 0;
 	bottom: 0;
-	background:#f2f2f2;
+	background:#f0f0f0;
 }
 .side-bar a{
 	color:#3C3E50;
