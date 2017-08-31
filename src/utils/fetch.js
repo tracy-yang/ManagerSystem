@@ -7,7 +7,9 @@ var instance = axios.create({
 })
 
 //axios request拦截器
-instance.interceptors.request.use()
+instance.interceptors.request.use(config =>{
+	return 
+})
 
 //axios reponse拦截器
 instance.interceptors.response.use(

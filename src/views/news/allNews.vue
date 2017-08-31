@@ -40,6 +40,7 @@
 						<select name="ddl">
 							<option value="">已发布</option>
 							<option value="">已下架</option>
+							<option value="">已删除</option>
 						</select>
 					</div>
 				</div>
