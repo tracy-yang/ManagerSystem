@@ -59,7 +59,7 @@
 					<button>删除</button>
 					<button>编辑</button>
 					<button>发布</button>
-					
+
 				</div>
 			</div>
 
@@ -96,20 +96,28 @@
 <script>
 	import Search from '../../components/table/Search';
 	//import myDatepicker from 'vue-datepicker'
+	import { getNewsList } from '../../api/news'; // 接口文件
 	export default {
 		components: {
 			Search,
 		},
-		data(){
-			return{
-				newsList:[]
+		data() {
+			return {
+				newsList: []
 			}
 		},
-		methods:{
-			//获取所有新闻列表
-			
+		created(){
+			this.getList();
+		},
+		methods: {
+			// 获取所有新闻列表
+			getList() {
+				getNewsList(10, 20, 2001).then(response => {
+					this.newsList = response.data;
+
+				});
+			}
 		}
-		
 
 	}
 </script>
@@ -119,7 +127,7 @@
 	$titleColor:#8492a6;
 	$borderColor:#bfcbd9;
 	$primaryBtnBgColor:#337ab7;
-	@mixin primaryBtn($bgColor:#337ab7, $borderColor:#2e6da4, $color:#fff, $fontSize:14px,$padtop:10px,$padleft:30px) {
+	@mixin primaryBtn($bgColor:#337ab7, $borderColor:#2e6da4, $color:#fff, $fontSize:14px, $padtop:10px, $padleft:30px) {
 		border: solid 1px $borderColor;
 		background: $bgColor;
 		box-sizing: border-box;
@@ -130,6 +138,7 @@
 		cursor: pointer;
 		outline: none;
 	}
+	
 	$boxShadow:0px 1px 2px #999;
 	.app-container {
 		padding: 20px 20px 10px 20px;
@@ -189,27 +198,27 @@
 				}
 			}
 		}
-		.tab-content{
-			background:#FFFFFF;
+		.tab-content {
+			background: #FFFFFF;
 			box-shadow: $boxShadow;
-			padding:20px 20px;
-			table{
-				border-collapse:collapse;
+			padding: 20px 20px;
+			table {
+				border-collapse: collapse;
 				width: 100%;
-				tr{
+				tr {
 					height: $height;
 					text-align: center;
 					font-size: 14px;
 				}
-				thead{
-					background:#F2F2F2;
-					tr{
-						color:$titleColor;
+				thead {
+					background: #F2F2F2;
+					tr {
+						color: $titleColor;
 					}
 				}
-				tbody{
-					td{
-						border-bottom: #f2f2f2  solid 1px;
+				tbody {
+					td {
+						border-bottom: #f2f2f2 solid 1px;
 					}
 				}
 			}
@@ -221,6 +230,6 @@
 	}
 	
 	.btn-group>button {
-		@include primaryBtn($bgColor:none,$color:#666,$padtop:8px,$padleft:16px,$borderColor:#d9d9d9)
+		@include primaryBtn($bgColor: none, $color:#666, $padtop:8px, $padleft:16px, $borderColor:#d9d9d9)
 	}
 </style>

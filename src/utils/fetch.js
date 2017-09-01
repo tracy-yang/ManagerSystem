@@ -8,7 +8,10 @@ var instance = axios.create({
 
 //axios request拦截器
 instance.interceptors.request.use(config =>{
-	return 
+	return config; 
+}, error => {
+	console.log(error);
+	
 })
 
 //axios reponse拦截器
@@ -17,10 +20,12 @@ instance.interceptors.response.use(
 		const res=response.data;
 		//状态不为200的时候
 		if(res.status !== 200){
-			Message({
-				message:res.errorMsg,
-				type:'error',
-			})
+			console.log(res.errorMsg)
+			
+//			Message({
+//				message:res.errorMsg,
+//				type:'error',
+//			})
 			return Promise.reject(res.errorMsg);
 		}
 		else{
@@ -28,10 +33,11 @@ instance.interceptors.response.use(
 		}
 	},
 	error => {
-		Message({
-			message:error.message,
-			type:'error'
-		});
+		console.log(error);
+//		Message({
+//			message:error.message,
+//			type:'error'
+//		});
 		return Promise.reject(error)
 	}
 )
