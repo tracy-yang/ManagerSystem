@@ -112,10 +112,9 @@
 		methods: {
 			// 获取所有新闻列表
 			getList() {
-				getNewsList(10, 20, 2001).then(response => {
-					this.newsList = response.data;
-
-				});
+				getNewsList().then(function(response){
+					console.log(response);
+				})
 			}
 		}
 
