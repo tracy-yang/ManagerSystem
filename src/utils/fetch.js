@@ -10,7 +10,7 @@ var instance = axios.create({
 instance.interceptors.request.use(config => {
     return config;
 }, error => {
-    console.log(error);
+    console.log(error); /*  */
 
 })
 
@@ -20,6 +20,7 @@ instance.interceptors.response.use(
         const res = response.data;
         //状态不为200的时候
         if (res.status !== 200) {
+            alert(11);
             console.log(res.errorMsg)
 
             //			Message({

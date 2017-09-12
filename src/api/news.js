@@ -7,7 +7,7 @@ export function getNewsList() {
     //     userId
     // };
     return fetch({
-        url: '/user',
+        url: '/newsList',
         method: 'get',
         //params
     })

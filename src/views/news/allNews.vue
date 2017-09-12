@@ -94,16 +94,16 @@
 </template>
 
 <script>
-	import Search from '../../components/table/Search';
+	// import Search from '../../components/table/Search';
 	//import myDatepicker from 'vue-datepicker'
 	import { getNewsList } from '../../api/news'; // 接口文件
 	export default {
-		components: {
-			Search,
-		},
+		// components: {
+		// 	Search,
+		// },
 		data() {
 			return {
-				newsList: []
+				newsList: null
 			}
 		},
 		created(){
@@ -115,6 +115,7 @@
 				getNewsList().then(function(response){
 					console.log(response);
 				})
+				
 			}
 		}
 
