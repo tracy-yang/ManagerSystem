@@ -77,14 +77,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr v-for="(item,index) in newsList">
 						<td><input type="checkbox" /></td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
+						<td>{{index+1}}</td>
+						<td>{{item.title}}</td>
+						<td>{{item.author}}</td>
+						<td>{{item.abstract}}</td>
+						<td>{{item.date}}</td>
+						<td><button>删除</button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -112,11 +112,17 @@
 		methods: {
 			// 获取所有新闻列表
 			getList() {
-				getNewsList().then(function(response){
-					console.log(response);
+				getNewsList().then(response =>{	
+					console.log('response',response);
+					this.newsList=response.list;
 				})
 				
 			}
+			// getList(){
+			// 	getNewsList().then( response => {
+			// 		console.log('response',response);
+			// 	})
+			// }
 		}
 
 	}
