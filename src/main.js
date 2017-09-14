@@ -5,8 +5,11 @@ import App from './App'
 import routes from './router'
 import VueRouter from 'vue-router'
 import store from './store'
+import YButton  from './components/button/button'
 
 Vue.use(VueRouter)
+
+Vue.component('y-button',YButton);
 
 const router = new VueRouter({
 	routes

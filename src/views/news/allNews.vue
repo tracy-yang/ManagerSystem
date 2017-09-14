@@ -47,6 +47,7 @@
 				<div class="form-btn-group">
 					<button>查询</button>
 					<button>重置</button>
+					<y-button type="primary" >查询</y-button>
 				</div>
 			</div>
 		</div>
@@ -91,6 +92,7 @@
 		</div>
 
 	</div>
+
 </template>
 
 <script>
