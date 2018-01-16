@@ -78,7 +78,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="(item,index) in newsList">
+					<tr v-for="(item,index) in newsList" :key="index">
 						<td><input type="checkbox" /></td>
 						<td>{{index+1}}</td>
 						<td>{{item.title}}</td>
@@ -90,7 +90,7 @@
 				</tbody>
 			</table>
 		</div>
-
+		<message></message>
 	</div>
 
 </template>
@@ -99,10 +99,11 @@
 	// import Search from '../../components/table/Search';
 	//import myDatepicker from 'vue-datepicker'
 	import { getNewsList } from '../../api/news'; // 接口文件
+	import message from '../../components/message/index'
 	export default {
-		// components: {
-		// 	Search,
-		// },
+		components: {
+			message
+		},
 		data() {
 			return {
 				newsList: null
