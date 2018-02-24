@@ -9,8 +9,8 @@ export function getNewsList() {
     //     userId
     // };
     return fetch({
-        url: '/newsList',
-        method: 'get',
+        url: '/newList',
+        method: 'post',
         //params
     })
 }

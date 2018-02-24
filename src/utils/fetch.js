@@ -7,7 +7,7 @@ import store from '../store'
 //     timeout: 5000,
 // })
 */
-axios.defaults.baseURL = "https://www.easy-mock.com/mock/59acdaa3e0dc6633419ad3bc/example"; // 设置全局的baseUrl
+axios.defaults.baseURL = "https://www.easy-mock.com/mock/59ad67b6e0dc6633419c3989/managerSystem/"; // 设置全局的baseUrl
 
 //axios request拦截器
 axios.interceptors.request.use(

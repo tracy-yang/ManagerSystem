@@ -12,11 +12,9 @@
 //     'warning':warning
 // }
 export default {
-    props:{
-        message:'这是一个message框'
-    },
     data(){
         return {
+            message:'这是一个message框'
         }
     }
 }
